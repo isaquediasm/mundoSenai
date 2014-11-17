@@ -1,5 +1,24 @@
 angular.module('cardapio', ['ionic'])
 
+.config(function($stateProvider, $urlRouterProvider) {
+  $stateProvider
+
+    .state('app', {
+      url: '/app',
+      templateUrl: 'templates/main.html',
+      controller: 'MainCtrl'
+    })
+
+    .state('pizza', {
+      url: '/pizza/:pizzaId',
+      templateUrl: "templates/pizza.html",
+      controller: "PizzasCtrl"
+    })
+
+  $urlRouterProvider.otherwise("app");
+})
+
+
 .controller('MainCtrl', function($scope){
   $scope.pizzas = 
   [{
