@@ -1,0 +1,51 @@
+<!-- A DIRETIVA ION-VIEW INICIALIZA O TEMPLATE -->
+<ion-view title="Pizzas">
+
+  <!-- INICIALIZA A NAVBAR DO PÁGINA -->
+  <ion-header-bar align-title="left" class="bar-positive">
+
+    <!-- TITULO NA NAVBAR -->
+    <h1 class="title">Pizzaria do Isaque</h1>
+
+  <!-- FIM DA NAVBAR -->
+  </ion-header-bar>
+    
+    <!-- A DIRETIVA ION-SLIDE-BOX TRATA-SE DE UM SLIDER DE CONTEÚDO, QUE PERMITE ROLAGEM HORIZONTAL DO CONTEÚDO -->
+    <ion-slide-box>
+
+      <!-- INICIALIZA O CONTEÚDO DO PRIMEIRO SLIDER -->
+      <ion-slide>
+
+        <!-- CONTEÚDO QUE PERMITE ROLAGEM -->
+        <ion-content>
+
+          <!-- DEFINE UMA LISTA HTML -->
+          <ion-list>
+         
+          </ion-list>
+
+        </ion-content>
+
+      </ion-slide>
+
+      <!-- INICIALIZA O CONTEÚDO DO SEGUNDO SLIDER -->
+      <ion-slide>
+      
+      
+      </ion-slide>
+      
+    </ion-slide-box>
+
+  <!-- DEFINE O MENU INFERIOR -->
+  <div class="tabs tabs-icon-top">
+  <a class="tab-item" on-tap="previous()">
+    <i class="icon ion-pizza"></i>
+    Pizzas
+  </a>
+  <a class="tab-item" on-tap="next()">
+    <i class="icon ion-beer"></i>
+    Bebidas
+  </a>
+ 
+</div>
+</ion-view>
