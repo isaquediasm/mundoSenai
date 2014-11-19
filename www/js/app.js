@@ -19,7 +19,8 @@ angular.module('cardapio', ['ionic'])
 })
 
 
-.controller('MainCtrl', function($scope){
+.controller('MainCtrl', function($scope, $ionicSideMenuDelegate, $ionicSlideBoxDelegate, $ionicNavBarDelegate){
+  
   $scope.pizzas = 
   [{
     id: 1, 
@@ -36,4 +37,25 @@ angular.module('cardapio', ['ionic'])
     img: 'img/pizza-2.jpg'
   }];
   
+
+
+  /* 
+      Funções responsáveis pela manipulação do slide do ionic.
+  */
+
+  $scope.next = function() {
+    $ionicSlideBoxDelegate.next();
+  };
+  $scope.previous = function() {
+    $ionicSlideBoxDelegate.previous();
+  };
+
+  // Called each time the slide changes
+  $scope.slideChanged = function(index) {
+    $scope.slideIndex = index;
+  };
+ $scope.goBack = function() {
+    $ionicNavBarDelegate.back();
+  };
+
 })

@@ -26,11 +26,8 @@
    
   <body ng-controller="MainCtrl">
     
-    <!-- Utilizamos a diretiva NG-REPEAT para percorrer nosso array $scope.pizzas -->
-    <a class="item item-thumbnail-left" ng-repeat="pizza in pizzas">
-        <img ng-src="{{pizza.img}}">
-        <h2>{{ pizza.sabor }}</h2>
-        <p>{{ pizza.descricao }}</p>
-    </a>
+    <!-- A diretiva ion-nav-view define onde os templates serão carregados -->
+    <ion-nav-view></ion-nav-view>
+
   </body>
 </html>
