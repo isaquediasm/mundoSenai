@@ -59,3 +59,10 @@ angular.module('cardapio', ['ionic'])
   };
 
 })
+
+.controller('PizzasCtrl', function($scope, $stateParams, $ionicNavBarDelegate) {
+
+  $scope.pizzaId = $stateParams.pizzaId;
+
+  
+})
