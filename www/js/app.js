@@ -18,27 +18,38 @@ angular.module('cardapio', ['ionic'])
   $urlRouterProvider.otherwise("app");
 })
 
-
-.controller('MainCtrl', function($scope, $ionicSideMenuDelegate, $ionicSlideBoxDelegate, $ionicNavBarDelegate){
+.factory('PizzasFactory', function() {
   
-  $scope.pizzas = 
-  [{
-    id: 1, 
+  var pizzas = [{
+    id: 0, 
     sabor: 'Atum', 
     valor: 33.99, 
     descricao: 'Lorem Ipsum',
     img: 'img/pizza-1.jpg'
   },
   {
-    id: 2, 
-    sabor: '4 Pizzas', 
+    id: 1, 
+    sabor: '4 Queijos', 
     valor: 32.99, 
     descricao: 'Lorem Ipsum',
     img: 'img/pizza-2.jpg'
   }];
   
 
+  return {
+    all: function() {
+      return pizzas;
+    },
+    get: function(index) {
+      return pizzas[index];
+    }
+  }
+})
 
+.controller('MainCtrl', function($scope, $ionicSideMenuDelegate, $ionicSlideBoxDelegate, $ionicNavBarDelegate, PizzasFactory){
+  
+  $scope.pizzas = PizzasFactory.all();
+  
   /* 
       Funções responsáveis pela manipulação do slide do ionic.
   */
@@ -60,9 +71,10 @@ angular.module('cardapio', ['ionic'])
 
 })
 
-.controller('PizzasCtrl', function($scope, $stateParams, $ionicNavBarDelegate) {
+.controller('PizzasCtrl', function($scope, $stateParams, $ionicNavBarDelegate, PizzasFactory) {
 
   $scope.pizzaId = $stateParams.pizzaId;
 
-  
 })
+
+
