@@ -15,21 +15,70 @@
     <img class="border-radius" ng-src="{{ pizza.img }}" width="100%" height="250px"/>
     <section class="padding">
 
+      <!-- Detalhes da Pizza -->
       <div class="item item-custom">
         <h2><strong>Sabor: </strong> {{ pizza.sabor }}</h2>
         <p>{{ pizza.descricao }}</p>
-        <p>R${{ pizza.valor }}</p>
+         <p>R${{ pizza.valor }}</p>
       </div>
 
+      <!-- Avaliação -->
       <div class="item item-custom">
         <h2><strong>Avaliação</strong></h2> 
         <h4>Sua nota: {{ pizza.nota }}</h4>
-            <i ng-click="avaliar(1)" ng-class="{'icon-votado' : pizza.nota>0}" class="icon icon-voto ion-star"></i>
-            <i ng-click="avaliar(2)" ng-class="{'icon-votado' : pizza.nota>1}" class="icon icon-voto ion-star"></i>
-            <i ng-click="avaliar(3)" ng-class="{'icon-votado' : pizza.nota>2}" class="icon icon-voto ion-star"></i>
-            <i ng-click="avaliar(4)" ng-class="{'icon-votado' : pizza.nota>3}" class="icon icon-voto ion-star"></i>
-            <i ng-click="avaliar(5)" ng-class="{'icon-votado' : pizza.nota>4}" class="icon icon-voto ion-star"></i>
+          <!-- Ícones de estrela -->
+          <i ng-click="avaliar(1)" ng-class="{'icon-votado' : pizza.nota>0}" class="icon icon-voto ion-star"></i>
+          <i ng-click="avaliar(2)" ng-class="{'icon-votado' : pizza.nota>1}" class="icon icon-voto ion-star"></i>
+          <i ng-click="avaliar(3)" ng-class="{'icon-votado' : pizza.nota>2}" class="icon icon-voto ion-star"></i>
+          <i ng-click="avaliar(4)" ng-class="{'icon-votado' : pizza.nota>3}" class="icon icon-voto ion-star"></i>
+          <i ng-click="avaliar(5)" ng-class="{'icon-votado' : pizza.nota>4}" class="icon icon-voto ion-star"></i>
       </div>
+
+      <!-- Comentários -->
+      <div class="item item-custom">
+        <h2><strong>Comentários</strong></h2><br>
+
+        <!-- Lista de comentários já existentes -->
+        <div class="list">
+          <a class="item item-custom" ng-repeat="comentario in pizza.comentarios">
+            <div class="item-head">
+              <h2>{{ comentario.autor }}</h2> 
+              <h4>{{ comentario.email }}</h4>
+            </div>
+            <p>{{ comentario.comentario }}</p>
+          </a><BR>
+
+          <!-- Formulário de cadastro de comentários -->
+          <div class="item-head">
+            <h2>Faça seu comentário</h2>
+          </div>
+          <div class="list"> 
+
+            <!-- Formulário -->
+            <form name="comentarioForm" ng-submit="comentar(coment)" accept-charset="utf-8" novalidate>
+
+              <label class="item item-input item-icon-right">   
+                <input type="text" name="nome" ng-minlength="3" ng-maxlength="40" ng-model="coment.autor" placeholder="Nome" required>
+              </label>
+
+              <label class="item item-input item-icon-right">
+                <input type="email" name="email" ng-model="coment.email" placeholder="Email" required>
+              </label>
+
+              <label class="item item-input item-icon-right">
+                <textarea name="comentario" ng-model="coment.comentario" ng-minlength="5" ng-maxlength="300" placeholder="Comentário" required></textarea>
+              </label> 
+
+              <button type="submit" ng-disabled="comentarioForm.$invalid" class="margin-top button button-positive">
+                Comentar
+              </button>
+
+            </form>
+
+          </div>
+
+        </div>
+        
     </section>
   <!-- FIM DO CONTEÚDO -->
   </ion-content>

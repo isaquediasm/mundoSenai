@@ -26,7 +26,15 @@ angular.module('cardapio', ['ionic'])
     valor: 33.99, 
     descricao: 'Lorem Ipsum',
     img: 'img/pizza-1.jpg',
-    nota: 0
+    nota: 0,
+    comentarios: 
+    [
+      {
+        autor: 'Isaque Dias',
+        email: 'isaquediasm@gmail.com',
+        comentario: 'Essa pizza é boa pakas, mano!'
+      }
+    ]
   },
   {
     id: 1, 
@@ -34,7 +42,15 @@ angular.module('cardapio', ['ionic'])
     valor: 32.99, 
     descricao: 'Lorem Ipsum',
     img: 'img/pizza-2.jpg',
-    nota: 0
+    nota: 0,
+    comentarios: 
+    [
+      {
+        autor: 'Isaque Dias',
+        email: 'isaquediasm@gmail.com',
+        comentario: 'Essa pizza é boa pakas, mano!'
+      }
+    ]
   }];
   
 
@@ -47,6 +63,9 @@ angular.module('cardapio', ['ionic'])
     },
     avaliar : function(nota,index) {
       pizzas[index].nota = nota;
+    },
+    comentar : function(comentario,index) {
+      pizzas[index].comentarios.push(comentario);
     }
   }
 })
@@ -80,9 +99,15 @@ angular.module('cardapio', ['ionic'])
 
   $scope.pizzaId = $stateParams.pizzaId;
   $scope.pizza = PizzasFactory.get($scope.pizzaId);
-  
+  $scope.coment = {};
+
   $scope.avaliar = function(nota) {
     PizzasFactory.avaliar(nota,$scope.pizzaId);
+  }
+
+  $scope.comentar = function(comentario) {
+    PizzasFactory.comentar(comentario,$scope.pizzaId);
+    $scope.coment = {};
   }
 
 })
