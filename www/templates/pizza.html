@@ -18,8 +18,18 @@
       <div class="item item-custom">
         <h2><strong>Sabor: </strong> {{ pizza.sabor }}</h2>
         <p>{{ pizza.descricao }}</p>
+        <p>R${{ pizza.valor }}</p>
       </div>
 
+      <div class="item item-custom">
+        <h2><strong>Avaliação</strong></h2> 
+        <h4>Sua nota: {{ pizza.nota }}</h4>
+            <i ng-click="avaliar(1)" ng-class="{'icon-votado' : pizza.nota>0}" class="icon icon-voto ion-star"></i>
+            <i ng-click="avaliar(2)" ng-class="{'icon-votado' : pizza.nota>1}" class="icon icon-voto ion-star"></i>
+            <i ng-click="avaliar(3)" ng-class="{'icon-votado' : pizza.nota>2}" class="icon icon-voto ion-star"></i>
+            <i ng-click="avaliar(4)" ng-class="{'icon-votado' : pizza.nota>3}" class="icon icon-voto ion-star"></i>
+            <i ng-click="avaliar(5)" ng-class="{'icon-votado' : pizza.nota>4}" class="icon icon-voto ion-star"></i>
+      </div>
     </section>
   <!-- FIM DO CONTEÚDO -->
   </ion-content>

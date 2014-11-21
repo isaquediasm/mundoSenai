@@ -25,14 +25,16 @@ angular.module('cardapio', ['ionic'])
     sabor: 'Atum', 
     valor: 33.99, 
     descricao: 'Lorem Ipsum',
-    img: 'img/pizza-1.jpg'
+    img: 'img/pizza-1.jpg',
+    nota: 0
   },
   {
     id: 1, 
     sabor: '4 Queijos', 
     valor: 32.99, 
     descricao: 'Lorem Ipsum',
-    img: 'img/pizza-2.jpg'
+    img: 'img/pizza-2.jpg',
+    nota: 0
   }];
   
 
@@ -42,6 +44,9 @@ angular.module('cardapio', ['ionic'])
     },
     get: function(index) {
       return pizzas[index];
+    },
+    avaliar : function(nota,index) {
+      pizzas[index].nota = nota;
     }
   }
 })
@@ -75,6 +80,10 @@ angular.module('cardapio', ['ionic'])
 
   $scope.pizzaId = $stateParams.pizzaId;
   $scope.pizza = PizzasFactory.get($scope.pizzaId);
+  
+  $scope.avaliar = function(nota) {
+    PizzasFactory.avaliar(nota,$scope.pizzaId);
+  }
 
 })
 
