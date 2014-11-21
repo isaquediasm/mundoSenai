@@ -19,7 +19,7 @@ angular.module('cardapio', ['ionic'])
 })
 
 .factory('PizzasFactory', function() {
-  
+
   var pizzas = [{
     id: 0, 
     sabor: 'Atum', 
@@ -74,6 +74,7 @@ angular.module('cardapio', ['ionic'])
 .controller('PizzasCtrl', function($scope, $stateParams, $ionicNavBarDelegate, PizzasFactory) {
 
   $scope.pizzaId = $stateParams.pizzaId;
+  $scope.pizza = PizzasFactory.get($scope.pizzaId);
 
 })
 

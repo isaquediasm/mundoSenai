@@ -12,6 +12,15 @@
   <!-- A DIRETIVA ION-CONTENT DEFINE O CONTEÚDO QUE PERMITE ROLAGEM -->
   <ion-content class="bg-content item-text-wrap">
 
+    <img class="border-radius" ng-src="{{ pizza.img }}" width="100%" height="250px"/>
+    <section class="padding">
+
+      <div class="item item-custom">
+        <h2><strong>Sabor: </strong> {{ pizza.sabor }}</h2>
+        <p>{{ pizza.descricao }}</p>
+      </div>
+
+    </section>
   <!-- FIM DO CONTEÚDO -->
   </ion-content>
 
