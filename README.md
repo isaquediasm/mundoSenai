@@ -1,3 +1,8 @@
+Cardápio Online 
+=====================
+Código fonte do aplicativo desenvolvido no minicurso Introduções ao Desenvolvimento de Aplicativos Móveis Híbridos, no Mundo SENAI.
+
+
 Ionic App Base
 =====================
 
