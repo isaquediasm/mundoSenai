@@ -3,8 +3,8 @@ Cardápio Online
 Código fonte do aplicativo desenvolvido no minicurso Introduções ao Desenvolvimento de Aplicativos Móveis Híbridos, no Mundo SENAI.
 
 
-Ionic App Base
-=====================
+## Ionic App Base
+
 
 A starting project for Ionic that optionally supports using custom SCSS.
 
