@@ -23,12 +23,11 @@
           <ion-list>
          
             <!-- Utilizamos a diretiva NG-REPEAT para percorrer nosso array $scope.pizzas -->
-            <a href="#/pizza/{{pizza.id}}" class="item item-thumbnail-left item-icon-right" ng-repeat="pizza in pizzas">
+            <a href="#/pizza/{{pizza.id}}" class="item item-thumbnail-left" ng-repeat="pizza in pizzas">
                 <img ng-src="{{pizza.img}}">
                 <h2>{{ pizza.sabor }}</h2>
                 <p>{{ pizza.descricao }}</p> 
                 <p>R${{ pizza.valor }}</p>   
-                <i class="icon icon-cinza ion-chevron-right"></i>
             </a>
 
           </ion-list>
@@ -39,22 +38,7 @@
 
       <!-- INICIALIZA O CONTEÚDO DO SEGUNDO SLIDER -->
       <ion-slide>
-        
-        <ion-content>
-
-          <ion-list>
-
-            <!-- Utilizamos a diretiva NG-REPEAT para percorrer nosso array $scope.pizzas -->
-            <a class="item item-thumbnail-left" ng-repeat="bebida in bebidas">
-                <img ng-src="{{bebida.img}}">
-                <h2>{{ bebida.nome }}</h2>
-                <p>{{ bebida.descricao }}</p> 
-                <p>R${{ bebida.valor }}</p>   
-            </a>
-
-          </ion-list>
-
-        </ion-content>
+      
       
       </ion-slide>
       
